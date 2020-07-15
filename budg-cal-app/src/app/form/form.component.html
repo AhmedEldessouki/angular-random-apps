@@ -36,8 +36,9 @@
             class="button is-primary"
             type="submit"
             [disabled]="itemForm.invalid"
+            [ngClass]="{ 'is-primary': isNewItem, 'is-success': !isNewItem }"
           >
-            Add
+            {{ isNewItem ? "Add" : "Save" }}
           </button>
         </p>
       </div>

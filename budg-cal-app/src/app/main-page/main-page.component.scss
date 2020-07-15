@@ -27,13 +27,13 @@
   background-color: $dark;
   height: 136px;
   h2 {
-    font: x-large "lato";
-    font-weight: 300;
+    font: 50px "lato";
+    font-weight: bold;
     &.green {
       color: lighten($green, 12%);
     }
     &.red {
-      color: lighten($red, 12%);
+      color: lighten($red, 20%);
     }
   }
 }

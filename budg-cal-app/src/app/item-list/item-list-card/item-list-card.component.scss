@@ -59,6 +59,9 @@
     transition: opacity 0.2s ease-out, transform 0.2s ease-out;
     transform: scale(0);
     opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     span {
       color: $red;
       font-size: 19px;
