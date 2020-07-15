@@ -1,0 +1,77 @@
+@import "../../../main-styles.scss";
+.root {
+  display: flex;
+  width: 100%;
+  padding: 5px;
+  position: relative;
+  .budget-item {
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    background-color: $light-grey;
+
+    transition: background-color 0.2s ease-out;
+    &:hover {
+      background-color: darken($light-grey, 4%);
+    }
+
+    .descreption {
+      align-self: center;
+      font-size: large;
+      flex-grow: 1;
+      text-transform: capitalize;
+    }
+    .amount {
+      align-self: center;
+      padding: 5px;
+      border-radius: 3px;
+    }
+  }
+  .income {
+    p {
+      color: $green;
+    }
+    .amount {
+      background-color: $light-green;
+    }
+  }
+  .expense {
+    p {
+      color: lighten($red, 20%);
+    }
+    .amount {
+      background-color: lighten($light-red, 17%);
+    }
+  }
+  .x-icon-button {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: $dark;
+    right: -14px;
+    top: -14px;
+    text-align: center;
+    cursor: pointer;
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+    transform: scale(0);
+    opacity: 0;
+    span {
+      color: $red;
+      font-size: 19px;
+      font-weight: 500;
+    }
+  }
+  &:hover {
+    .x-icon-button {
+      opacity: 1;
+      transform: scale(1);
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}

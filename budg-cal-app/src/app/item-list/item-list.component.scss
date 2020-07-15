@@ -1,0 +1,40 @@
+@import "../../main-styles.scss";
+
+.add-item-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 50px 50px;
+  .add-item-container {
+    display: flex;
+    // justify-content: center;
+    // align-items: center;
+    max-width: 680px;
+    width: 100%;
+    height: 100%;
+    .income-column,
+    .expenses-column {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 0; //for the 2 columns to be of the same height, regardless of the content
+      flex-grow: 1;
+      padding: 10px;
+      h1 {
+        font: 24px "lato";
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+    }
+    .income-column {
+      margin-right: 25px;
+      h1 {
+        color: lighten($green, 12%);
+      }
+    }
+    .expenses-column {
+      h1 {
+        color: lighten($red, 12%);
+      }
+    }
+  }
+}

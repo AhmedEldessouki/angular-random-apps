@@ -1,0 +1,47 @@
+@import "../../main-styles.scss";
+
+.top-bar {
+  display: flex;
+  width: 100%;
+  height: 68px;
+  background: linear-gradient(
+    0.15turn,
+    rgba(22, 28, 41, 30%),
+    rgb(173, 203, 231),
+    rgba(22, 28, 41, 30%)
+  );
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font: x-large "lato";
+    letter-spacing: 1px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: $dark;
+  }
+}
+.result-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $dark;
+  height: 136px;
+  h2 {
+    font: x-large "lato";
+    font-weight: 300;
+    &.green {
+      color: lighten($green, 12%);
+    }
+    &.red {
+      color: lighten($red, 12%);
+    }
+  }
+}
+.add-item-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .add-item-container {
+    width: 680px;
+  }
+}

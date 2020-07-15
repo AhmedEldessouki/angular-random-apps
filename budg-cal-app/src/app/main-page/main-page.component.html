@@ -1,0 +1,16 @@
+<div class="top-bar">
+  <h1>Calculate Your Budget</h1>
+</div>
+<section class="result-section">
+  <h2>1000</h2>
+</section>
+<section class="add-item-section">
+  <div class="add-item-container">
+    <app-form style="margin: 10px;" (formSubmit)="addItem($event)"></app-form>
+  </div>
+</section>
+<hr style="margin-top: 0;" />
+<app-item-list
+  [budgetItems]="budgetItems"
+  (deleteEvent)="deleteItem($event)"
+></app-item-list>
