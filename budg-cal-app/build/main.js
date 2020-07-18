@@ -560,17 +560,26 @@ const _c0 = function (a0, a1) { return { green: a0, red: a1 }; };
 class MainPageComponent {
     constructor() {
         this.budgetItems = new Array();
+        // locBudgetItems: BudgetItem[] = new Array<BudgetItem>();
         this.tottalBudget = 0;
     }
-    ngOnInit() { }
+    ngOnInit() {
+        this.getBudgetItems();
+    }
     addItem(newItem) {
         this.budgetItems.push(newItem);
         this.tottalBudget += newItem.amount;
+        // Set Local DB
+        localStorage.setItem('budgetItems', JSON.stringify(this.budgetItems));
+        localStorage.setItem('tottalBudget', JSON.stringify(this.tottalBudget));
     }
     deleteItem(item) {
         const index = this.budgetItems.indexOf(item);
         this.budgetItems.splice(index, 1);
         this.tottalBudget -= item.amount;
+        // Set Local DB
+        localStorage.setItem('budgetItems', JSON.stringify(this.budgetItems));
+        localStorage.setItem('tottalBudget', JSON.stringify(this.tottalBudget));
     }
     updateItem(updateEvent) {
         // edit the selected item
@@ -579,6 +588,20 @@ class MainPageComponent {
         // budget Update
         const total = updateEvent.new.amount - updateEvent.old.amount;
         this.tottalBudget += total;
+        // Set Local DB
+        localStorage.setItem('budgetItems', JSON.stringify(this.budgetItems));
+        localStorage.setItem('tottalBudget', JSON.stringify(this.tottalBudget));
+    }
+    getBudgetItems() {
+        if (localStorage.getItem('budgetItems') === null) {
+            this.budgetItems = new Array();
+            this.tottalBudget = 0;
+        }
+        else {
+            this.budgetItems = JSON.parse(localStorage.getItem('budgetItems'));
+            this.tottalBudget = JSON.parse(localStorage.getItem('tottalBudget'));
+        }
+        // return this.budgetItems;
     }
 }
 MainPageComponent.ɵfac = function MainPageComponent_Factory(t) { return new (t || MainPageComponent)(); };
